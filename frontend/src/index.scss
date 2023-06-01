@@ -1,0 +1,23 @@
+:root {
+  // COLORS
+  --main-bg-color: #faf9fb;
+  --main-text-color: #1f2937;
+  --color-white: #fff;
+  --color-red: #ef4444;
+  --light-grey-1: #cecfd4;
+  --light-grey-2: #9ca3af;
+  --light-blue-1: #64748b;
+
+  // FONT SIZES
+  --default-font-size: 16px;
+
+  // BORDERS
+  --border: 1px solid #e5e7eb;
+
+  // WIDTHS
+  --max-width: 1024px;
+
+  // BOX SHADOWS
+  --box-shadow-1: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
