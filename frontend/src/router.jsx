@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./layouts/RootLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>FEASTLY FALVOURS</h1>,
+    element: <RootLayout />,
   },
 ]);
 
