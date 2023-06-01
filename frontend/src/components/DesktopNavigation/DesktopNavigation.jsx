@@ -1,7 +1,9 @@
-import React from "react";
+import "./DesktopNavigation.scss";
 
 function DesktopNavigation() {
-  return <nav>THIS IS THE DESKTOP NAVIGATION</nav>;
+  return (
+    <nav className="desktopNavigation">THIS IS THE DESKTOP NAVIGATION</nav>
+  );
 }
 
 export default DesktopNavigation;

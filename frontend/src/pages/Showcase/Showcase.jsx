@@ -1,7 +1,7 @@
-import React from "react";
+import "./Showcase.scss";
 
 function Showcase() {
-  return <main>THIS IS THE SHOWCASE</main>;
+  return <main className="showcase">THIS IS THE SHOWCASE</main>;
 }
 
 export default Showcase;
