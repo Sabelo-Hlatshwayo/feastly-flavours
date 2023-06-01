@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout/RootLayout";
-import Showcase from "./components/Showcase/Showcase";
+import Showcase from "./pages/Showcase/Showcase";
+import Favourites from "./pages/Favourites/Favourites";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Showcase />,
+      },
+
+      {
+        path: "favourites",
+        element: <Favourites />,
       },
     ],
   },

@@ -3,10 +3,10 @@ import DesktopNavigation from "../../components/DesktopNavigation/DesktopNavigat
 
 function RootLayout() {
   return (
-    <main className="main">
+    <div className="rootLayout">
       <DesktopNavigation />
       <Outlet />
-    </main>
+    </div>
   );
 }
 
