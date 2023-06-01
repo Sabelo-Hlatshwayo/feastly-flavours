@@ -21,3 +21,25 @@
   --box-shadow-1: 0 4px 6px -1px rgb(0 0 0 / 0.1),
     0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: var(--main-text-color);
+  line-height: 1.2;
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
