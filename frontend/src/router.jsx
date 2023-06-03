@@ -1,6 +1,6 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout/RootLayout";
-import Showcase from "./pages/Showcase/Showcase";
+import Home from "./pages/Home/Home";
 import Favourites from "./pages/Favourites/Favourites";
 
 const router = createBrowserRouter([
@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Showcase />,
+        element: <Home />,
       },
 
       {
