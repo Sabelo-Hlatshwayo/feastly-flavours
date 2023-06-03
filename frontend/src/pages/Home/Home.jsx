@@ -1,10 +1,13 @@
-import "./Home.scss";
 import SearchForm from "../../components/SearchForm/SearchForm";
+import MainContainer from "../../Containers/MainContainer/MainContainer";
+import "./Home.scss";
 
 function Home() {
   return (
     <main className="home">
-      <SearchForm />
+      <MainContainer>
+        <SearchForm />
+      </MainContainer>
     </main>
   );
 }
