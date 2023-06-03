@@ -1,4 +1,5 @@
 import { Search } from "lucide-react";
+import "./SearchForm.scss";
 
 function SearchForm() {
   return (
