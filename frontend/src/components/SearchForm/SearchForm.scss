@@ -2,4 +2,30 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  &__input {
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: var(--default-font-size);
+    color: var(--main-text-color);
+    background-color: var(--color-white);
+    width: 100%;
+    padding: 0 48px;
+    height: 48px;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 8px;
+    outline-offset: 3px;
+    outline: 2px solid transparent;
+    transition: all 0.1s;
+
+    &::placeholder {
+      color: var(--light-grey-2);
+    }
+
+    &:focus {
+      outline-offset: 3px;
+      outline: 2px solid var(--light-grey-1);
+    }
+  }
 }
