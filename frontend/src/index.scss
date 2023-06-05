@@ -22,6 +22,24 @@
     0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
+// MEDIA QUERY BREAKPOINTS
+// 'sm': '640px', => @media (max-width: 640px)
+
+// 'md': '768px', => @media (max-width: 768px)
+
+// 'lg': '1024px', => @media (max-width: 1024px)
+
+// 'xl': '1280px', => @media (max-width: 1280px)
+
+// 'xl2': '1280px to Infinity', => @media (min-width: 1280px)
+
+// MEDIA QUERY BREAKPOINT PARAMETERS
+// $sm
+// $md
+// $lg
+// $xl
+// $xl2
+
 *,
 *::before,
 *::after {
