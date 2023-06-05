@@ -40,6 +40,39 @@
 // $xl
 // $xl2
 
+// MEDIA QUERY MANAGER
+@mixin respond($breakpoint) {
+  @media screen and (max-width: 640px) {
+    @if ($breakpoint == sm) {
+      @content;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    @if ($breakpoint == md) {
+      @content;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    @if ($breakpoint == lg) {
+      @content;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    @if ($breakpoint == xl) {
+      @content;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    @if ($breakpoint == xl2) {
+      @content;
+    }
+  }
+}
+
 *,
 *::before,
 *::after {
