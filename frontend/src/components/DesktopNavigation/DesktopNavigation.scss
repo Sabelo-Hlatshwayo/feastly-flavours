@@ -1,7 +1,14 @@
+@use "../../index.scss";
+
 .desktopNavigation {
   width: 256px;
   padding: 40px;
   border-right: var(--border);
+
+  @include index.respond(md) {
+    width: 96px;
+    padding: 40px 10px;
+  }
 
   &__heading {
     font-size: 24px;
@@ -9,6 +16,11 @@
     color: var(--main-text-color);
     text-transform: capitalize;
     margin-bottom: 80px;
+
+    @include index.respond(md) {
+      font-size: 20px;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -22,6 +34,11 @@
     display: flex;
     align-items: center;
     gap: 5px;
+
+    @include index.respond(md) {
+      display: flex;
+      justify-content: center;
+    }
 
     &:link,
     &:visited {
@@ -39,6 +56,10 @@
       font-weight: 700;
       color: var(--main-text-color);
       text-transform: capitalize;
+
+      @include index.respond(md) {
+        display: none;
+      }
     }
   }
 }
