@@ -8,8 +8,12 @@
   justify-content: center;
   background-color: var(--color-white);
   border-top: var(--border);
+  height: 50px;
 
   &__list {
-    border: solid green;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 55px;
   }
 }
