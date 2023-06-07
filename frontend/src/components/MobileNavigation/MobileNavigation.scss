@@ -16,4 +16,17 @@
     align-items: center;
     gap: 55px;
   }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+
+    & > svg {
+      stroke: var(--main-text-color);
+      height: 24px;
+      width: 24px;
+    }
+  }
 }
