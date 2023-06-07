@@ -1,14 +1,20 @@
+@use "../../index.scss";
+
 .mobileNavigation {
-  //   border: solid yellow;
   position: absolute;
   bottom: 0;
   width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: var(--color-white);
   border-top: var(--border);
   height: 50px;
+  display: none;
+
+  @include index.respond(sm) {
+    display: flex;
+  }
 
   &__list {
     list-style: none;
