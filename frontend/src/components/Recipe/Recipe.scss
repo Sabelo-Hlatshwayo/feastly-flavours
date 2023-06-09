@@ -2,4 +2,12 @@
   padding: 12px;
   background-color: #fbe5e7;
   border-radius: 10px;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 }
