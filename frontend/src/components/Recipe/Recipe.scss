@@ -42,4 +42,17 @@
       stroke: var(--main-text-color);
     }
   }
+
+  &__like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    top: 4px;
+    right: 8px;
+    border-radius: 50px;
+    background-color: var(--color-white);
+  }
 }
