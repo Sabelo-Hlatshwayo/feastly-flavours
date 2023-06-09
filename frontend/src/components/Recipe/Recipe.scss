@@ -66,4 +66,11 @@
       stroke: var(--main-text-color);
     }
   }
+
+  &__heading {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--main-text-color);
+    margin-bottom: 4px;
+  }
 }
