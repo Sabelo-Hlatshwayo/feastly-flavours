@@ -3,6 +3,13 @@
   background-color: #fbe5e7;
   border-radius: 10px;
 
+  &__link {
+    display: block;
+    position: relative;
+    height: 130px;
+    margin-bottom: 12px;
+  }
+
   &__image {
     display: block;
     width: 100%;
