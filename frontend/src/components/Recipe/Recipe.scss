@@ -29,5 +29,11 @@
     border-radius: 100px;
     background-color: var(--color-white);
     cursor: default;
+
+    & > span {
+      font-size: 14px;
+      color: var(--main-text-color);
+      text-transform: capitalize;
+    }
   }
 }
