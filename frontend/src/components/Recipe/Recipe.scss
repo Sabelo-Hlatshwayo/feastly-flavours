@@ -54,5 +54,16 @@
     right: 8px;
     border-radius: 50px;
     background-color: var(--color-white);
+
+    &:hover > svg {
+      fill: var(--color-red);
+      stroke: var(--color-red);
+    }
+
+    & > svg {
+      height: 20px;
+      width: 20px;
+      stroke: var(--main-text-color);
+    }
   }
 }
