@@ -17,4 +17,17 @@
     object-fit: cover;
     border-radius: 8px;
   }
+
+  &__servings {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 4px;
+    border-radius: 100px;
+    background-color: var(--color-white);
+    cursor: default;
+  }
 }
