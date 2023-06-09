@@ -81,4 +81,31 @@
     color: var(--main-text-color);
     margin-bottom: 10px;
   }
+
+  &__health {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    & > span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      border-radius: 6px;
+      background-color: #fdc6c7;
+
+      & > svg {
+        height: 16px;
+        width: 16px;
+        stroke: var(--main-text-color);
+      }
+
+      & > span {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--main-text-color);
+      }
+    }
+  }
 }
