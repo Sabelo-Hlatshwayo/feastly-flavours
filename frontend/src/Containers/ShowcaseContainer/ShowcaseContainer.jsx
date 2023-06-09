@@ -5,6 +5,11 @@ function ShowcaseContainer() {
   return (
     <div className="showcaseContainer">
       <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
+      <Recipe />
     </div>
   );
 }

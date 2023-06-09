@@ -1,10 +1,11 @@
 import { Heart, Soup, HeartPulse } from "lucide-react";
+import "./Recipe.scss";
 
 function Recipe() {
   return (
     <div className="recipe">
       <a href="#" className="recipe__link">
-        <img src="./1.jpg" alt="Roast Rack of Lamb" />
+        <img src="./1.jpg" alt="Roast Rack of Lamb" className="recipe__image" />
         <span className="recipe__servings">
           <Soup />
           <span>4 servings</span>
