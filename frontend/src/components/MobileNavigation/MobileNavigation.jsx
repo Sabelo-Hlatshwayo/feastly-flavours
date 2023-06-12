@@ -7,12 +7,12 @@ function MobileNavigation() {
     <nav className="mobileNavigation">
       <ul className="mobileNavigation__list">
         <li className="mobileNavigation__item">
-          <NavLink className="mobileNavigation__link">
+          <NavLink to="/" className="mobileNavigation__link">
             <Home />
           </NavLink>
         </li>
         <li className="mobileNavigation__item">
-          <NavLink className="mobileNavigation__link">
+          <NavLink to="/favourites" className="mobileNavigation__link">
             <Heart />
           </NavLink>
         </li>

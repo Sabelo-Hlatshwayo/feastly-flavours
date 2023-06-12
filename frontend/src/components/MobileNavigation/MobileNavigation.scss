@@ -36,4 +36,8 @@
       width: 24px;
     }
   }
+
+  & .active > svg {
+    stroke: var(--color-red);
+  }
 }
