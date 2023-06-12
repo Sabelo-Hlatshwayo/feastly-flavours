@@ -71,4 +71,12 @@
       }
     }
   }
+
+  // & .active > svg {
+  //   stroke: var(--color-red);
+  // }
+
+  & {
+    border: solid red;
+  }
 }

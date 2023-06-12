@@ -32,12 +32,12 @@
 
     & > svg {
       stroke: var(--main-text-color);
-      height: 24px;
-      width: 24px;
+      height: 30px;
+      width: 30px;
     }
-  }
 
-  & .active > svg {
-    stroke: var(--color-red);
+    &.active > svg {
+      stroke: var(--color-red);
+    }
   }
 }

@@ -9,12 +9,12 @@ function DesktopNavigation() {
       <ul className="desktopNavigation__list">
         <li className="desktopNavigation__item">
           <NavLink className="desktopNavigation__link">
-            <Home />
+            <Home to="/" />
             <span>home</span>
           </NavLink>
         </li>
         <li className="desktopNavigation__item">
-          <NavLink className="desktopNavigation__link">
+          <NavLink to="/favourites" className="desktopNavigation__link">
             <Heart />
             <span>favourites</span>
           </NavLink>
