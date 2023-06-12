@@ -8,8 +8,8 @@ function DesktopNavigation() {
       <h1 className="desktopNavigation__heading">feastly flavours</h1>
       <ul className="desktopNavigation__list">
         <li className="desktopNavigation__item">
-          <NavLink className="desktopNavigation__link">
-            <Home to="/" />
+          <NavLink to="/" className="desktopNavigation__link">
+            <Home />
             <span>home</span>
           </NavLink>
         </li>

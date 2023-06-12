@@ -70,13 +70,15 @@
         display: none;
       }
     }
-  }
 
-  // & .active > svg {
-  //   stroke: var(--color-red);
-  // }
+    &.active {
+      & > svg {
+        stroke: var(--color-red);
+      }
 
-  & {
-    border: solid red;
+      & > span {
+        color: var(--color-red);
+      }
+    }
   }
 }
