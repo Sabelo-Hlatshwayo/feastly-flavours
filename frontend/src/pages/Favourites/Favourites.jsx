@@ -1,5 +1,7 @@
+import "./Favourites.scss";
+
 function Favourites() {
-  return <div>THIS IS THE FAVOURITES</div>;
+  return <main className="favourites"></main>;
 }
 
 export default Favourites;
