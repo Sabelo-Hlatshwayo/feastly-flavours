@@ -8,7 +8,7 @@ function ShowcaseContainer() {
 
   // console.log(recipes?.hits[0].recipe);
 
-  console.log(recipes?.hits);
+  // console.log(recipes?.hits);
 
   const recipesList = recipes?.hits.map(({ recipe }) => {
     return (
@@ -17,7 +17,7 @@ function ShowcaseContainer() {
         image={recipe.image}
         label={recipe.label}
         cuisineType={recipe.cuisineType}
-        healthLabels={[recipe.healthLabels[0], recipe.healthLabels[1]]}
+        healthLabels={recipe.healthLabels}
       />
     );
   });
