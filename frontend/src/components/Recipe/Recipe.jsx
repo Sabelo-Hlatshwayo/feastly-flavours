@@ -1,7 +1,12 @@
 import { Heart, Soup, HeartPulse } from "lucide-react";
+import generateRandomNumber from "../../utils/generateRandomNumber";
 import "./Recipe.scss";
 
 function Recipe({ image, label, cuisineType, healthLabels }) {
+  for (let i = 0; i <= 20; i++) {
+    console.log(generateRandomNumber(0, 5));
+  }
+
   return (
     <div className="recipe">
       <a href="#" className="recipe__link">
