@@ -1,11 +1,11 @@
 import { Heart, Soup, HeartPulse } from "lucide-react";
 import "./Recipe.scss";
 
-function Recipe() {
+function Recipe({ image, label, cuisineType, healthLabels }) {
   return (
     <div className="recipe">
       <a href="#" className="recipe__link">
-        <img src="./1.jpg" alt="Roast Rack of Lamb" className="recipe__image" />
+        <img src={image} alt="Roast Rack of Lamb" className="recipe__image" />
         <span className="recipe__servings">
           <Soup />
           <span>4 servings</span>
@@ -15,17 +15,17 @@ function Recipe() {
         </span>
       </a>
 
-      <h4 className="recipe__heading">Roast Rack of Lamb</h4>
-      <h5 className="recipe__subheading">american kitchen</h5>
+      <h4 className="recipe__heading">{label}</h4>
+      <h5 className="recipe__subheading">{cuisineType}</h5>
       <div className="recipe__health">
-        <span>
-          <HeartPulse />
-          <span>Sugar-Conscious</span>
-        </span>
-        <span>
-          <HeartPulse />
-          <span>Low Potassium</span>
-        </span>
+        {healthLabels.map((label) => {
+          return (
+            <span>
+              <HeartPulse />
+              <span>{label}</span>
+            </span>
+          );
+        })}
       </div>
     </div>
   );
