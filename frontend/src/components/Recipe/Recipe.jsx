@@ -4,7 +4,7 @@ import generateRandomNumber from "../../utils/generateRandomNumber";
 import truncateText from "../../utils/truncateText";
 import "./Recipe.scss";
 
-function Recipe({ image, label, cuisineType, healthLabels }) {
+function Recipe({ image, label, cuisineType, healthLabels, servings }) {
   const healthLabelsList = [];
 
   while (true) {
@@ -22,7 +22,7 @@ function Recipe({ image, label, cuisineType, healthLabels }) {
         <img src={image} alt="Roast Rack of Lamb" className="recipe__image" />
         <span className="recipe__servings">
           <Soup />
-          <span>4 servings</span>
+          <span>{servings} servings</span>
         </span>
         <span className="recipe__like">
           <Heart />

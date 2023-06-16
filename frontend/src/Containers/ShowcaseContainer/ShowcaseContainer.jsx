@@ -6,10 +6,6 @@ import "./ShowcaseContainer.scss";
 function ShowcaseContainer() {
   const { recipes } = useRecipes();
 
-  // console.log(recipes?.hits[0].recipe);
-
-  // console.log(recipes?.hits);
-
   const recipesList = recipes?.hits.map(({ recipe }) => {
     return (
       <Recipe
@@ -18,6 +14,7 @@ function ShowcaseContainer() {
         label={recipe.label}
         cuisineType={recipe.cuisineType}
         healthLabels={recipe.healthLabels}
+        servings={recipe.yield}
       />
     );
   });
