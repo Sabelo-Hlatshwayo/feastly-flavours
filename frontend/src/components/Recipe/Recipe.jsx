@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { Heart, Soup, HeartPulse } from "lucide-react";
 import generateRandomNumber from "../../utils/generateRandomNumber";
+import truncateText from "../../utils/truncateText";
 import "./Recipe.scss";
 
 function Recipe({ image, label, cuisineType, healthLabels }) {
@@ -28,7 +29,7 @@ function Recipe({ image, label, cuisineType, healthLabels }) {
         </span>
       </a>
 
-      <h4 className="recipe__heading">{label}</h4>
+      <h4 className="recipe__heading">{truncateText(label)}</h4>
       <h5 className="recipe__subheading">{cuisineType}</h5>
       <div className="recipe__health">
         {healthLabelsList.map((label) => {
