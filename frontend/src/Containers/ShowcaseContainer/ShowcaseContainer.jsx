@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import Recipe from "../../components/Recipe/Recipe";
+import RecipeSkeleton from "../../components/RecipeSkeleton/RecipeSkeleton";
 import { useRecipes } from "../../context/features/RecipesContextProvider";
 import "./ShowcaseContainer.scss";
 
@@ -22,14 +23,7 @@ function ShowcaseContainer() {
   });
 
   const skeletonList = new Array(20).fill(undefined).map(() => {
-    return (
-      <div className="flex flex-col gap-4">
-        <div className="skeleton h-32 w-full"></div>
-        <div className="skeleton h-4 w-28"></div>
-        <div className="skeleton h-4 w-full"></div>
-        <div className="skeleton h-4 w-full"></div>
-      </div>
-    );
+    return <RecipeSkeleton key={uuidv4()} />;
   });
 
   if (error) return <h1>{error}</h1>;
