@@ -19,8 +19,6 @@ function RecipesContextProvider({ children }) {
         const url = `${import.meta.env.VITE_BASE_URL}${query}`;
         const response = await fetch(url);
 
-        console.log(response);
-
         if (response.status >= 400) {
           throw new Error("HELLO NTANDO MAYUTS!!!");
         }

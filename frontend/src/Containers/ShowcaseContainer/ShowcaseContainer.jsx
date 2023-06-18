@@ -6,7 +6,7 @@ import "./ShowcaseContainer.scss";
 function ShowcaseContainer() {
   const { recipes, error, loading } = useRecipes();
 
-  console.log(recipes, error, loading);
+  // console.log(recipes, error, loading);
 
   const recipesList = recipes?.hits.map(({ recipe }) => {
     return (
@@ -21,10 +21,24 @@ function ShowcaseContainer() {
     );
   });
 
-  if (error) return <h1>{error}</h1>;
-  if (loading) return <h1>Loading...</h1>;
+  const skeletonList = new Array(20).fill(undefined).map(() => {
+    return (
+      <div className="flex flex-col gap-4">
+        <div className="skeleton h-32 w-full"></div>
+        <div className="skeleton h-4 w-28"></div>
+        <div className="skeleton h-4 w-full"></div>
+        <div className="skeleton h-4 w-full"></div>
+      </div>
+    );
+  });
 
-  return <div className="showcaseContainer">{recipesList}</div>;
+  if (error) return <h1>{error}</h1>;
+
+  return (
+    <div className="showcaseContainer">
+      {loading ? skeletonList : recipesList}
+    </div>
+  );
 }
 
 export default ShowcaseContainer;
