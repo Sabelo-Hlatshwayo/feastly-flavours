@@ -5,6 +5,18 @@ function recipesReducer(state, action) {
     case ACTIONS.SET_RECIPES: {
       return { ...state, recipes: action.payload };
     }
+
+    case ACTIONS.SET_ERROR: {
+      return { ...state, error: action.payload };
+    }
+
+    case ACTIONS.SET_LOADING: {
+      return { ...state, loading: action.payload };
+    }
+
+    default: {
+      throw new Error(`Unknown action: ${action.type} `);
+    }
   }
 }
 

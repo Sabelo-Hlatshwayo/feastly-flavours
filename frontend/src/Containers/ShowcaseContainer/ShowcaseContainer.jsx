@@ -4,7 +4,9 @@ import { useRecipes } from "../../context/features/RecipesContextProvider";
 import "./ShowcaseContainer.scss";
 
 function ShowcaseContainer() {
-  const { recipes } = useRecipes();
+  const { recipes, error, loading } = useRecipes();
+
+  console.log(recipes, error, loading);
 
   const recipesList = recipes?.hits.map(({ recipe }) => {
     return (
@@ -18,6 +20,9 @@ function ShowcaseContainer() {
       />
     );
   });
+
+  if (error) return <h1>{error}</h1>;
+  if (loading) return <h1>Loading...</h1>;
 
   return <div className="showcaseContainer">{recipesList}</div>;
 }

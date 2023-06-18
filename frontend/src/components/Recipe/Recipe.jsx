@@ -8,8 +8,6 @@ import "./Recipe.scss";
 function Recipe({ image, label, cuisineType, healthLabels, servings }) {
   const { bg, badge } = generateRandomColor();
 
-  console.log(bg, badge);
-
   const healthLabelsList = [];
 
   while (true) {
