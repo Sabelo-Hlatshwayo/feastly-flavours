@@ -24,11 +24,13 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
 
   const handleOnLoad = () => {
     imageRef.current.style.opacity = 1;
+    imageRef.current.previousElementSibling.style.opacity = 0;
   };
 
   return (
     <div className="recipe" style={{ backgroundColor: bg }}>
       <a href="#" className="recipe__link">
+        <div className="skeleton recipe__skeleton"></div>
         <img
           src={image}
           alt="Roast Rack of Lamb"
