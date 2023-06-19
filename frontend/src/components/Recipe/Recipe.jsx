@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Heart, Soup, HeartPulse } from "lucide-react";
 import generateRandomNumber from "../../utils/generateRandomNumber";
@@ -6,6 +7,8 @@ import truncateText from "../../utils/truncateText";
 import "./Recipe.scss";
 
 function Recipe({ image, label, cuisineType, healthLabels, servings }) {
+  const imageRef = useRef(null);
+
   const { bg, badge } = generateRandomColor();
 
   const healthLabelsList = [];
@@ -19,10 +22,21 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
     }
   }
 
+  const handleOnLoad = () => {
+    imageRef.current.style.opacity = 1;
+  };
+
   return (
     <div className="recipe" style={{ backgroundColor: bg }}>
       <a href="#" className="recipe__link">
-        <img src={image} alt="Roast Rack of Lamb" className="recipe__image" />
+        <img
+          src={image}
+          alt="Roast Rack of Lamb"
+          className="recipe__image"
+          onLoad={() => handleOnLoad()}
+          style={{ opacity: 0 }}
+          ref={imageRef}
+        />
         <span className="recipe__servings">
           <Soup />
           <span>{servings} servings</span>
