@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Heart, Soup, HeartPulse } from "lucide-react";
 import generateRandomNumber from "../../utils/generateRandomNumber";
 import generateRandomColor from "../../utils/generateRandomColor";
+import RecipeImageSkeleton from "../RecipeImageSkeleton/RecipeImageSkeleton";
 import truncateText from "../../utils/truncateText";
 import "./Recipe.scss";
 
@@ -30,7 +31,7 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
   return (
     <div className="recipe" style={{ backgroundColor: bg }}>
       <a href="#" className="recipe__link">
-        <div className="skeleton recipe__skeleton"></div>
+        <RecipeImageSkeleton />
         <img
           src={image}
           alt="Roast Rack of Lamb"
