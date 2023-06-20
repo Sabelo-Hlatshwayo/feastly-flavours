@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import RecipesContextProvider from "../../context/features/RecipesContextProvider";
 import DesktopNavigation from "../../components/DesktopNavigation/DesktopNavigation";
 import MobileNavigation from "../../components/MobileNavigation/MobileNavigation";
 import "./RootLayout.scss";
@@ -8,7 +9,10 @@ function RootLayout() {
     <div className="rootLayout">
       <DesktopNavigation />
       <MobileNavigation />
-      <Outlet />
+
+      <RecipesContextProvider>
+        <Outlet />
+      </RecipesContextProvider>
     </div>
   );
 }

@@ -2,11 +2,7 @@ import RecipesContextProvider from "../../context/features/RecipesContextProvide
 import "./MainContainer.scss";
 
 function MainContainer({ children }) {
-  return (
-    <RecipesContextProvider>
-      <div className="mainContainer">{children}</div>
-    </RecipesContextProvider>
-  );
+  return <div className="mainContainer">{children}</div>;
 }
 
 export default MainContainer;

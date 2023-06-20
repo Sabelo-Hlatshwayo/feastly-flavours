@@ -6,6 +6,7 @@ const RecipesContext = createContext(null);
 
 function RecipesContextProvider({ children }) {
   const initialState = {
+    query: "pork",
     recipes: null,
     error: null,
     loading: true,
@@ -23,7 +24,10 @@ function RecipesContextProvider({ children }) {
           throw new Error("HELLO NTANDO MAYUTS!!!");
         }
 
+        console.log(state.query);
         const recipes = await response.json();
+
+        console.log("FETCHED DATA AGAIN!!!");
 
         dispatch({ type: ACTIONS.SET_RECIPES, payload: recipes });
         dispatch({ type: ACTIONS.SET_ERROR, payload: null });
@@ -36,7 +40,7 @@ function RecipesContextProvider({ children }) {
       }
     };
 
-    fetchRecipes("pork");
+    fetchRecipes(state.query);
   }, []);
 
   const value = {
