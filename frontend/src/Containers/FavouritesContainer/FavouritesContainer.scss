@@ -1,0 +1,16 @@
+@use "../../index.scss";
+
+.favouritesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+
+  @include index.respond(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include index.respond(md) {
+    grid-template-columns: 1fr;
+  }
+}
