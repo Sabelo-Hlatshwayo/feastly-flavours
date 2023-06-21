@@ -7,12 +7,15 @@ const RecipesContext = createContext(null);
 function RecipesContextProvider({ children }) {
   const initialState = {
     query: "pork",
-    recipes: null,
+    recipes: [],
     error: null,
     loading: true,
+    favourites: [],
   };
 
   const [state, dispatch] = useReducer(recipesReducer, initialState);
+
+  console.log(state.favourites);
 
   useEffect(() => {
     const fetchRecipes = async (query) => {
@@ -24,10 +27,10 @@ function RecipesContextProvider({ children }) {
           throw new Error("HELLO NTANDO MAYUTS!!!");
         }
 
-        console.log(state.query);
+        // console.log(state.query);
         const recipes = await response.json();
 
-        console.log("FETCHED DATA AGAIN!!!");
+        // console.log("FETCHED DATA AGAIN!!!");
 
         dispatch({ type: ACTIONS.SET_RECIPES, payload: recipes });
         dispatch({ type: ACTIONS.SET_ERROR, payload: null });
@@ -47,6 +50,8 @@ function RecipesContextProvider({ children }) {
     recipes: state.recipes,
     error: state.error,
     loading: state.loading,
+    favourites: state.favourites,
+    dispatch,
   };
 
   return (

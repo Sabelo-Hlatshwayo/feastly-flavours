@@ -57,8 +57,8 @@
     background-color: var(--color-white);
 
     &:hover > svg {
-      fill: var(--color-red);
-      stroke: var(--color-red);
+      fill: var(--color-red) !important;
+      stroke: var(--color-red) !important;
     }
 
     & > svg {

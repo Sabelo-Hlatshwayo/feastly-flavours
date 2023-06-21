@@ -1,4 +1,4 @@
-import "./FavouritesContainer";
+import "./FavouritesContainer.scss";
 
 function FavouritesContainer() {
   return (
