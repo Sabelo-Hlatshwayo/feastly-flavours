@@ -7,9 +7,7 @@ import "./ShowcaseContainer.scss";
 function ShowcaseContainer() {
   const { recipes, error, loading } = useRecipes();
 
-  // console.log(recipes, error, loading);
-
-  const recipesList = recipes?.hits.map(({ recipe }) => {
+  const recipesList = recipes?.hits?.map(({ recipe }) => {
     return (
       <Recipe
         key={uuidv4()}

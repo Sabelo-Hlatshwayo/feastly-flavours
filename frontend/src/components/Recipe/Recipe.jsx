@@ -43,12 +43,14 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
       updatedFavs = favourites.filter((fav) => fav.label !== label);
       dispatch({ type: ACTIONS.REMOVE_FAVOURITE, payload: updatedFavs });
     }
+
+    localStorage.setItem("favourites", JSON.stringify(updatedFavs));
   };
 
   useEffect(() => {
     const isLiked = favourites.some((fav) => fav.label === label);
     setIsFavourite(isLiked);
-  }, []);
+  }, [favourites, label]);
 
   return (
     <div className="recipe" style={{ backgroundColor: bg }}>
