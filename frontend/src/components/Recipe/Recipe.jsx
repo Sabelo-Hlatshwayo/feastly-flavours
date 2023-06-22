@@ -36,14 +36,10 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
     const recipe = { image, label, cuisineType, healthLabels, servings };
     let updatedFavs;
 
-    if (!isFavourite) {
-      updatedFavs = [...favourites, recipe];
-      dispatch({ type: ACTIONS.ADD_FAVOURITE, payload: updatedFavs });
-    } else {
-      updatedFavs = favourites.filter((fav) => fav.label !== label);
-      dispatch({ type: ACTIONS.REMOVE_FAVOURITE, payload: updatedFavs });
-    }
+    if (!isFavourite) updatedFavs = [...favourites, recipe];
+    else updatedFavs = favourites.filter((fav) => fav.label !== label);
 
+    dispatch({ type: ACTIONS.SET_FAVOURITES, payload: updatedFavs });
     localStorage.setItem("favourites", JSON.stringify(updatedFavs));
   };
 

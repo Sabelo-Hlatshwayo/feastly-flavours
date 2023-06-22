@@ -15,8 +15,6 @@ function RecipesContextProvider({ children }) {
 
   const [state, dispatch] = useReducer(recipesReducer, initialState);
 
-  console.log(state.favourites);
-
   useEffect(() => {
     const fetchRecipes = async (query) => {
       try {
@@ -45,6 +43,13 @@ function RecipesContextProvider({ children }) {
 
     fetchRecipes(state.query);
   }, []);
+
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem("favourites")) || [];
+    dispatch({ type: ACTIONS.SET_FAVOURITES, payload: favs });
+  }, []);
+
+  console.log(state.favourites);
 
   const value = {
     recipes: state.recipes,

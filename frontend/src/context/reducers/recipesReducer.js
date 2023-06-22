@@ -15,12 +15,7 @@ function recipesReducer(state, action) {
       return { ...state, loading: action.payload };
     }
 
-    case ACTIONS.ADD_FAVOURITE: {
-      console.log(action.payload);
-      return { ...state, favourites: action.payload };
-    }
-
-    case ACTIONS.REMOVE_FAVOURITE: {
+    case ACTIONS.SET_FAVOURITES: {
       return { ...state, favourites: action.payload };
     }
 

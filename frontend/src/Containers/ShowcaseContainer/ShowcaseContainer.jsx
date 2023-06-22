@@ -5,7 +5,11 @@ import { useRecipes } from "../../context/features/RecipesContextProvider";
 import "./ShowcaseContainer.scss";
 
 function ShowcaseContainer() {
-  const { recipes, error, loading } = useRecipes();
+  // const { recipes, error, loading } = useRecipes();
+
+  const recipes = useRecipes()?.recipes;
+  const error = useRecipes()?.error;
+  const loading = useRecipes()?.loading;
 
   const recipesList = recipes?.hits?.map(({ recipe }) => {
     return (
