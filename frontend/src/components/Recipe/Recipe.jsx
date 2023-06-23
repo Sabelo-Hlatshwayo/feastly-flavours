@@ -32,7 +32,8 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
     imageRef.current.previousElementSibling.style.opacity = 0;
   };
 
-  const handleFavourites = () => {
+  const handleFavourites = (e) => {
+    e.preventDefault();
     const recipe = { image, label, cuisineType, healthLabels, servings };
     let updatedFavs;
 
@@ -50,7 +51,10 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
 
   return (
     <div className="recipe" style={{ backgroundColor: bg }}>
-      <a href="#" className="recipe__link">
+      <a
+        href={`https://www.youtube.com/results?search_query=${label}`}
+        className="recipe__link"
+      >
         <RecipeImageSkeleton />
         <img
           src={image}
@@ -60,11 +64,11 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
           style={{ opacity: 0 }}
           ref={imageRef}
         />
-        <span className="recipe__servings">
+        <span className="recipe__servings" onClick={(e) => e.preventDefault()}>
           <Soup />
           <span>{servings} servings</span>
         </span>
-        <span className="recipe__like" onClick={() => handleFavourites()}>
+        <span className="recipe__like" onClick={(e) => handleFavourites(e)}>
           <Heart
             style={{
               fill: isFavourite ? "#ef4444" : "#fff",

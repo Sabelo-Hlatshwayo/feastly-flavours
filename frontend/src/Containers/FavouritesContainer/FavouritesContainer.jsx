@@ -4,7 +4,6 @@ import Recipe from "../../components/Recipe/Recipe";
 import "./FavouritesContainer.scss";
 
 function FavouritesContainer() {
-  // const [favourites, setfavourites] = useState([]);
   const { favourites } = useRecipes();
 
   const favouritesList = favourites.map((favourite) => {
