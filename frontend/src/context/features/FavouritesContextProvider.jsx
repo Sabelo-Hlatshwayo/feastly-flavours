@@ -9,16 +9,19 @@ function FavouritesContextProvider({ children }) {
     favourites: [],
   };
 
-  const [state, dispatch] = useReducer(favouritesReducer, initialState);
+  const [state, favouritesDispatch] = useReducer(
+    favouritesReducer,
+    initialState
+  );
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favourites")) || [];
-    dispatch({ type: ACTIONS.SET_FAVOURITES, payload: favs });
+    favouritesDispatch({ type: ACTIONS.SET_FAVOURITES, payload: favs });
   }, []);
 
   const value = {
     favourites: state.favourites,
-    dispatch,
+    favouritesDispatch,
   };
 
   return (

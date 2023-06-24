@@ -12,7 +12,7 @@ import "./Recipe.scss";
 function Recipe({ image, label, cuisineType, healthLabels, servings }) {
   const [isFavourite, setIsFavourite] = useState(false);
   const imageRef = useRef(null);
-  const { dispatch, favourites } = useFavourites();
+  const { favouritesDispatch, favourites } = useFavourites();
 
   const { bg, badge } = generateRandomColor();
 
@@ -40,7 +40,7 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
     if (!isFavourite) updatedFavs = [...favourites, recipe];
     else updatedFavs = favourites.filter((fav) => fav.label !== label);
 
-    dispatch({ type: ACTIONS.SET_FAVOURITES, payload: updatedFavs });
+    favouritesDispatch({ type: ACTIONS.SET_FAVOURITES, payload: updatedFavs });
     localStorage.setItem("favourites", JSON.stringify(updatedFavs));
   };
 

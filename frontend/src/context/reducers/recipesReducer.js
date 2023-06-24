@@ -15,7 +15,7 @@ function recipesReducer(state, action) {
     }
 
     default: {
-      throw new Error(`Unknown action: ${action.type} `);
+      throw new Error(`Unknown action: ${action.type}`);
     }
   }
 }

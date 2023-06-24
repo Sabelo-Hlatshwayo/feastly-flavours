@@ -1,21 +1,23 @@
 import { useEffect, useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useQueryContext } from "../../context/features/QueryContextProvider";
 import Recipe from "../../components/Recipe/Recipe";
 import RecipeSkeleton from "../../components/RecipeSkeleton/RecipeSkeleton";
 import { ACTIONS } from "../../context/actions";
 import recipesReducer from "../../context/reducers/recipesReducer";
+import NotFound from "../../components/NotFound/NotFound";
 import "./ShowcaseContainer.scss";
 
 function ShowcaseContainer() {
   const initialState = {
-    query: "pork",
     recipes: [],
     error: null,
     loading: true,
     favourites: [],
   };
 
-  const [state, dispatch] = useReducer(recipesReducer, initialState);
+  const [state, recipesDispatch] = useReducer(recipesReducer, initialState);
+  const { query } = useQueryContext();
 
   useEffect(() => {
     const fetchRecipes = async (query) => {
@@ -27,24 +29,21 @@ function ShowcaseContainer() {
           throw new Error("HELLO NTANDO MAYUTS!!!");
         }
 
-        // console.log(state.query);
         const recipes = await response.json();
 
-        console.log("FETCHED DATA AGAIN!!!");
-
-        dispatch({ type: ACTIONS.SET_RECIPES, payload: recipes });
-        dispatch({ type: ACTIONS.SET_ERROR, payload: null });
+        recipesDispatch({ type: ACTIONS.SET_RECIPES, payload: recipes });
+        recipesDispatch({ type: ACTIONS.SET_ERROR, payload: null });
       } catch (err) {
-        dispatch({ type: ACTIONS.SET_RECIPES, payload: [] });
-        dispatch({ type: ACTIONS.SET_ERROR, payload: err.message });
+        recipesDispatch({ type: ACTIONS.SET_RECIPES, payload: [] });
+        recipesDispatch({ type: ACTIONS.SET_ERROR, payload: err.message });
         console.error(err.message);
       } finally {
-        dispatch({ type: ACTIONS.SET_LOADING, payload: false });
+        recipesDispatch({ type: ACTIONS.SET_LOADING, payload: false });
       }
     };
 
-    fetchRecipes(state.query);
-  }, []);
+    fetchRecipes(query);
+  }, [query]);
 
   const recipesList = state?.recipes?.hits?.map(({ recipe }) => {
     return (
@@ -65,10 +64,23 @@ function ShowcaseContainer() {
 
   if (state.error) return <h1>{state.error}</h1>;
 
+  // const notFound = (
+  //   // <h4>
+  //   //   Oops! We couldn't find any recipes matching your search. Try another
+  //   //   keyword!
+  //   // </h4>
+  // );
+
   return (
-    <div className="showcaseContainer">
-      {state.loading ? skeletonList : recipesList}
-    </div>
+    <>
+      {state.recipes?.hits?.length === 0 && (
+        <NotFound message=" Oops! We couldn't find any recipes matching your search. Try another keyword!" />
+      )}
+
+      <div className="showcaseContainer">
+        {state.loading ? skeletonList : recipesList}
+      </div>
+    </>
   );
 }
 
