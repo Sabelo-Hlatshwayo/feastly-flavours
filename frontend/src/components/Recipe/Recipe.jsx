@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useRecipes } from "../../context/features/RecipesContextProvider";
+import { useFavourites } from "../../context/features/FavouritesContextProvider";
 import { Heart, Soup, HeartPulse } from "lucide-react";
 import { ACTIONS } from "../../context/actions";
 import generateRandomNumber from "../../utils/generateRandomNumber";
@@ -12,7 +12,7 @@ import "./Recipe.scss";
 function Recipe({ image, label, cuisineType, healthLabels, servings }) {
   const [isFavourite, setIsFavourite] = useState(false);
   const imageRef = useRef(null);
-  const { dispatch, favourites } = useRecipes();
+  const { dispatch, favourites } = useFavourites();
 
   const { bg, badge } = generateRandomColor();
 
@@ -47,13 +47,14 @@ function Recipe({ image, label, cuisineType, healthLabels, servings }) {
   useEffect(() => {
     const isLiked = favourites.some((fav) => fav.label === label);
     setIsFavourite(isLiked);
-  }, [favourites, label]);
+  }, [favourites]);
 
   return (
     <div className="recipe" style={{ backgroundColor: bg }}>
       <a
-        href={`https://www.youtube.com/results?search_query=${label}`}
+        href={`https://www.youtube.com/results?search_query=${label} recipe`}
         className="recipe__link"
+        target="_blank"
       >
         <RecipeImageSkeleton />
         <img

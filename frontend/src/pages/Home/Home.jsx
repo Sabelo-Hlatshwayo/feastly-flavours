@@ -1,3 +1,4 @@
+import { memo } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import MainContainer from "../../Containers/MainContainer/MainContainer";
 import PrimaryHeading from "../../components/PrimaryHeading/PrimaryHeading";

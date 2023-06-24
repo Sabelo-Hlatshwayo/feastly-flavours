@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
-import { useRecipes } from "../../context/features/RecipesContextProvider";
 import Recipe from "../../components/Recipe/Recipe";
+import { useFavourites } from "../../context/features/FavouritesContextProvider";
 import "./FavouritesContainer.scss";
 
 function FavouritesContainer() {
-  const { favourites } = useRecipes();
+  const { favourites } = useFavourites();
 
   const favouritesList = favourites.map((favourite) => {
     return (

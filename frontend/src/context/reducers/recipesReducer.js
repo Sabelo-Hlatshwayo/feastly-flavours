@@ -1,4 +1,3 @@
-import Favourites from "../../pages/Favourites/Favourites";
 import { ACTIONS } from "../actions";
 
 function recipesReducer(state, action) {
@@ -13,10 +12,6 @@ function recipesReducer(state, action) {
 
     case ACTIONS.SET_LOADING: {
       return { ...state, loading: action.payload };
-    }
-
-    case ACTIONS.SET_FAVOURITES: {
-      return { ...state, favourites: action.payload };
     }
 
     default: {
