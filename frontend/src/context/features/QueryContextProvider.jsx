@@ -15,8 +15,6 @@ function QueryContextProvider({ children }) {
     queryDispatch,
   };
 
-  console.log(state.query);
-
   return (
     <QueryContext.Provider value={value}>{children}</QueryContext.Provider>
   );

@@ -26,7 +26,7 @@ function ShowcaseContainer() {
         const response = await fetch(url);
 
         if (response.status >= 400) {
-          throw new Error("HELLO NTANDO MAYUTS!!!");
+          throw new Error("Something went wrong. Try reloading.");
         }
 
         const recipes = await response.json();
@@ -62,14 +62,9 @@ function ShowcaseContainer() {
     return <RecipeSkeleton key={uuidv4()} />;
   });
 
-  if (state.error) return <h1>{state.error}</h1>;
-
-  // const notFound = (
-  //   // <h4>
-  //   //   Oops! We couldn't find any recipes matching your search. Try another
-  //   //   keyword!
-  //   // </h4>
-  // );
+  if (state.error) {
+    throw new Error(state.error);
+  }
 
   return (
     <>
